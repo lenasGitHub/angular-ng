@@ -1,0 +1,17 @@
+<a routerLink="/rentals/{{rental.id}}">
+  <img src="assets/house-5.jpeg" alt="House 1" class="home__img" />
+
+  <div class="home__location">
+    <p>{{ rental.category }}</p>
+  </div>
+  <div class="home__rooms">
+    <p>{{ rental.city }}</p>
+  </div>
+  <div class="home__area">
+    <p>325 m<sup>2</sup></p>
+  </div>
+  <div class="home__price">
+    <p>${{ rental.dailyRate }} per Night &#183; Free Cancelation</p>
+  </div>
+  <button class="btn home__btn">{{ rental.title }}</button>
+</a>
