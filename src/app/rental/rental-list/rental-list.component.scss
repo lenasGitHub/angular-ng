@@ -1,0 +1,20 @@
+@import "base";
+
+section.homes {
+  font-size: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $color-grey-light-2;
+  border-bottom: $line;
+  justify-content: space-evenly;
+
+  .home {
+    // -webkit-box-flex: 1;
+    // -ms-flex: 1 1 auto;
+    // flex: 0 1 auto;
+    width: 300px;
+    // text-align: center;
+    margin: 2rem;
+    max-width: 250px;
+  }
+}

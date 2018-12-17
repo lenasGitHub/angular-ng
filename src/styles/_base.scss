@@ -5,7 +5,7 @@ $color-primary-dark: #b28451;
 $color-secondary: #101d2c;
 
 $color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
+$color-grey-light-2: #f4f2f2;
 $color-grey-light-3: #ccc;
 
 $color-grey-dark-1: #54483a;
@@ -14,6 +14,9 @@ $color-grey-dark-2: #6d5d4b;
 // FONT VARIABLES
 $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
+
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+$line: 1px solid $color-grey-light-2;
 
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em; // 1200px
@@ -44,32 +47,48 @@ body {
   font-weight: 300;
   line-height: 1.6;
   min-height: 100vh;
-}
 
+  background-image: linear-gradient(
+    to right bottom,
+    $color-grey-dark-1,
+    $color-grey-dark-2
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .container {
-  display: grid;
-  grid-template-rows: 7rem min-content repeat(2, min-content);
-  grid-template-columns:
-    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
-    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-    [center-end] minmax(6rem, 1fr)
-    [full-end];
-
-  /***
-  grid-template-columns: 8rem 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
-  ***   8 columns each on addapet(width) min-contant with 14rem to fix not over 14rem
-  ***   1fr center repeat(8) add 1fs after before
-  ***  minmax(6rem, 1fr) win shrenk not below 6rem
-  **/
-  // @media only screen and (max-width: $bp-large) {
-  //   grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
-  //   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(
-  //       8,
-  //       [col-start] minmax(min-content, 14rem) [col-end]
-  //     ) [center-end] minmax(6rem, 1fr) [full-end];
-  // }
-
-  // @media only screen and (max-width: $bp-medium) {
-  //   grid-template-rows: 6rem calc(100vh - 6rem);
-  // }
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: $color-grey-light-1;
+  min-height: 50rem;
+  display: block;
+  box-shadow: $shadow-light;
 }
+
+/******
+.container{
+  display: flex;
+
+  CONTAINER
+  flex-direction:row | row-reverse | column | column-reverse; // direction
+
+  justify-content: flex-start | flex-end | center |
+    space-between | space-around | space-evenly  // center enter contant in center or other like margin auto
+
+  align-items: stretch | flex-start | flex-end | center | baseline ///  CROSS AXIS
+  flex-wrap: wrap; fit the width of screen
+
+  align-content: stretch | flex-start | flex-end | center | space-between | space-around
+
+  ITEM
+
+  align-self: auto | stretch | flex-start | flex- end | center | baseline
+  order: 0, -1 , -2 .....
+  flex-grow ,OR, flex: 0  stretch width the space   2,3,4
+  flex-shrink: 1 | <integer> 5 flex-basis: auto | <length> allwo to shrink, if not put 0
+  flex-basis: 20%
+}
+
+
+
+*****/
