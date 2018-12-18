@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
+import { MapModule } from "./../common/map/map.module";
 
 import { NgPipesModule } from "ngx-pipes";
 
@@ -33,7 +34,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    NgPipesModule
+    NgPipesModule,
+    MapModule
   ],
   providers: [RentalService]
 })
